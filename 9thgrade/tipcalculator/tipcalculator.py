@@ -2,21 +2,28 @@ import sys
 import time
 
 try:
-    # create user inputs for the bill and tip
-    bill = float(input('Input bill here: '))
-    tippercent = int(input('Input tip percent here: '))
+    finished = False
+    while finished == False:
 
-    # create variables total, bill & tip
-    # bill is a float variable whilst the tip percent is an int variable
+        # create user inputs for the bill and tip
+        bill = float(input('Input bill here: '))
+        tippercent = int(input('Input tip percent here: '))
 
-    # calculates the total
-    total = bill + float(tippercent/100 * bill)
+        # create variables total, bill & tip
+        # bill is a float variable whilst the tip percent is an int variable
 
-    print('Please wait...')
-    time.sleep(1.5)
+        # calculates the total
+        total = bill + float(tippercent/100 * bill)
 
-    # prints the f string of total after user has input data
-    print(f'This will cost a total of ${total}.')
+        print('Please wait...')
+        time.sleep(1.5)
+
+        # prints the f string of total after user has input data
+        print(f'This will cost a total of ${total}.')
+        finishedinput = input('Do you want to calculate another total? (yes/no) ')
+        if finishedinput.lower() == 'no':
+            print('Thank you for using this calculator!')
+            finished = True
 
 except Exception:
     e = sys.exc_info()[1]
