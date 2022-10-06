@@ -1,7 +1,7 @@
 from statistics import mean
 
-def findaverage():
-    return mean(student['grades'])
+def findAverage(gradeList):
+    return mean(gradeList)
 
 student = {
     "name" : "Bob",
@@ -10,5 +10,5 @@ student = {
     "average" : ""
 }
 
-student["average"] = findaverage()
+student["average"] = findAverage(student["grades"])
 print(student)
