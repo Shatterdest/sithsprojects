@@ -3,53 +3,48 @@ import sys
 import time
 
 try:
-    class_average = []
-    new_line = '\n'
+    classAverage = []
+    newLine = '\n'
 
-    def newstudent():
-        name_input = input('What is the name of the student? ')
-        class_input = input('What class is the student in? ')
+    def findAverage(gradeList):
+        return mean(gradeList)
+
+    def newStudent():
+        nameInput = input('What is the name of the student? ')
+        classInput = input('What class is the student in? ')
         student = {
-            "name" : name_input,
-            "class" : class_input,
+            "name" : nameInput,
+            "class" : classInput,
             "grades" : [],
             "average" : ""
     }   
-
-        def findaverage():
-            return mean(student['grades'])
-
-
-        def getgrade():
+        def getGrade():
             finished = False
             while finished == False:
-                gradeinput = int(input("Enter a grade here: "))
-                student["grades"] += [gradeinput]
-                finishedinput = input('Are you finished entering grades? (yes/no, y/n) ')
-                if finishedinput.lower() in ('yes', 'y'):
-                    student["average"] = findaverage()
+                gradeInput = int(input("Enter a grade here: "))
+                student["grades"] += [gradeInput]
+                finishedInput = input('Are you finished entering grades? (yes/no, y/n) ')
+                if finishedInput.lower() in ('yes', 'y'):
+                    student["average"] = findAverage(student["grades"])
                     finished = True
                     print('Calculating Student Average... Please wait...')
                     time.sleep(1)
-                    print(f'The student\'s name is {student["name"]}. The student\'s class is {student["class"]}. The student\'s grades are the following: {student["grades"]}. {new_line}The student\'s average grade is {student["average"]}.')
-                    class_average.append(student["average"])
-        getgrade()
+                    studentGrades = ', '.join(map(str, student["grades"]))
+                    print(f'The student\'s name is {student["name"]}. The student\'s class is {student["class"]}. The student\'s grades are the following: {studentGrades}. {newLine}The student\'s average grade is {student["average"]}.')
+                    classAverage.append(student["average"])
+        getGrade()
 
+    continueAddingStudents = True
 
-    def find_class_average():
-        return mean(class_average)
-
-    continue_adding_students = True
-
-    while continue_adding_students == True:
-        newstudent()
+    while continueAddingStudents == True:
+        newStudent()
         done = input('Are you done adding students? (yes/no, y/n) ')
         if done.lower() in ('yes', 'y'):
-            continue_adding_students = False
-            find_class_average()
+            continueAddingStudents = False
+            studentAverages = ', '.join(map(str, classAverage))
             print('Calculating class average... Please wait...')
             time.sleep(1.5)
-            print(f'The class average is {find_class_average()}. Thank you for using the Class Gradebook Program!')
+            print(f'The list of student averages are {studentAverages}. The class average is {findAverage(classAverage)}. Thank you for using the Class Gradebook Program!')
 
 
 except Exception:
