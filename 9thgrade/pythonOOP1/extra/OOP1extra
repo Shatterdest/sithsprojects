@@ -1,4 +1,5 @@
-import ast
+
+from codecs import encode
 import uuid
 import time
 import json
@@ -79,6 +80,8 @@ while continueSigningIn == True:
                 print('Shutting down...')
                 with open('9thgrade/pythonOOP1/extra/data.json', 'w') as data:
                     data.write(json.dumps(userData, sort_keys = True, indent = 4))
+                with open('9thgrade/pythonOOP1/extra/encrypted.json', 'w') as encrypted:
+                    encrypted.write(encode(str(userData)))
                 time.sleep(2)
     else:
         print('Please make sure you entered the correct user type.')
