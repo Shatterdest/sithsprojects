@@ -1,17 +1,17 @@
 [
     {
-        "Name": "adf",
-        "Password": "f279c0ca-0348-41da-9990-c85b2d3e85f3"
+        "Name": "Bob",
+        "Password": "70d4b928-27b1-4e27-abab-71404ac97cea"
     },
     {
-        "Job": "a",
-        "Name": "a",
-        "Password": "da4cebe3-c98e-405c-b4aa-48bbb7b3ec33",
+        "Job": "chef",
+        "Name": "sarah",
+        "Password": "fe8c4e38-b4cc-4fe9-99a7-053c4f8cf1a0",
         "Permissions": "Employee"
     },
     {
-        "Name": "a",
-        "Password": "b45446d5-3246-486e-90b6-52426cf92a4c",
+        "Name": "jesus",
+        "Password": "89c226d5-d827-4102-833e-a22c7138d3b0",
         "Permissions": "Manager"
     }
 ]

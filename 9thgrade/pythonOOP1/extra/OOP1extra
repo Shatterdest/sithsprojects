@@ -1,5 +1,5 @@
 
-from codecs import encode
+from cryptography.fernet import Fernet
 import uuid
 import time
 import json
@@ -35,6 +35,14 @@ class Manager(User):
     def __str__(self):
         return f'Name: {self.name} ID: {self.id} Permissions: {self.permissions}'
 
+key = Fernet.generate_key()
+fernet = Fernet(key)
+with open('9thgrade/pythonOOP1/extra/encrypted.txt', 'r') as file:
+    data = file.read()
+    global decrypted
+    decrypted = (fernet.decrypt(str(data)).decode())
+    
+print(decrypted)
 userData = []
 continueSigningIn = True
 while continueSigningIn == True:
@@ -80,8 +88,11 @@ while continueSigningIn == True:
                 print('Shutting down...')
                 with open('9thgrade/pythonOOP1/extra/data.json', 'w') as data:
                     data.write(json.dumps(userData, sort_keys = True, indent = 4))
-                with open('9thgrade/pythonOOP1/extra/encrypted.json', 'w') as encrypted:
-                    encrypted.write(encode(str(userData)))
+                    data.close()
+                with open('9thgrade/pythonOOP1/extra/encrypted.txt', 'w') as encrypted:
+                    userDataStr = str(userData)
+                    encrypted.write(str(fernet.encrypt(userDataStr.encode())))
+                    encrypted.close()
                 time.sleep(2)
     else:
         print('Please make sure you entered the correct user type.')
