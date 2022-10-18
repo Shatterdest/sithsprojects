@@ -1,3 +1,4 @@
+import ast
 import uuid
 import time
 import json
@@ -40,7 +41,7 @@ while continueSigningIn == True:
     userType = input('What type of user are you? (Customer, Employee, or Manager) ')
     if userType.lower() == 'customer':
         nameInput = input('What is your name? ')
-        newCustomer = Customer(uuid.uuid4(), nameInput)
+        newCustomer = Customer(str(uuid.uuid4()), nameInput)
         print(f'Your name is {newCustomer.name}, and your unique Password is {newCustomer.id}. Thanks for signing in! ')
         newCustomerDic = {
             'Name' : newCustomer.name,
@@ -50,7 +51,7 @@ while continueSigningIn == True:
     elif userType.lower() == 'employee':
         nameInput = input('What is your name? ')
         jobInput = input('What is your occupation? ')
-        newEmployee = Employee(uuid.uuid4(), nameInput, jobInput)
+        newEmployee = Employee(str(uuid.uuid4()), nameInput, jobInput)
         print(f'Your name is {newEmployee.name}, and your unique Password is {newEmployee.id}. Your job is {newEmployee.job}. Thanks for signing in! ')
         newEmployeeDic = {
             'Name' : newEmployee.name,
@@ -61,22 +62,24 @@ while continueSigningIn == True:
         userData.append(newEmployeeDic)
     elif userType.lower() == 'manager':
         nameInput = input('What is your name? ')
-        newManager = Manager(uuid.uuid4(), nameInput)
+        newManager = Manager(str(uuid.uuid4()), nameInput)
         print(f'Your name is {newManager.name}, and your unique Password is {newManager.id}. Thanks for signing in! ')
         newManagerDic = {
             'Name' : newManager.name,
-            'Password' : newManager.name,
+            'Password' : newManager.id,
             'Permissions' : 'Manager'
         }
         userData.append(newManagerDic)
         outputUsers = input(f'Manager, do you want to see the users in the list? (y/n) ')
         if outputUsers.lower() == 'y':
             print(userData)
-            endLoop = input(f'Manager, do you want to shut down and clear the list in this sign in system? (y/n) ')
+            endLoop = input(f'Manager, do you want to shut down and save the list in this sign in system? (y/n) ')
             if endLoop.lower() == 'y':
                 continueSigningIn = False
                 print('Shutting down...')
+                with open('9thgrade/pythonOOP1/extra/data.json', 'w') as data:
+                    data.write(json.dumps(userData, sort_keys = True, indent = 4))
                 time.sleep(2)
     else:
         print('Please make sure you entered the correct user type.')
-        time.sleep(3)
+        time.sleep(1.5)

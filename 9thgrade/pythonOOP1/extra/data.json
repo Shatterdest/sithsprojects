@@ -1,0 +1,17 @@
+[
+    {
+        "Name": "Bob",
+        "Password": "a8bd0fb5-2418-4c8a-8012-2c32f55bc128"
+    },
+    {
+        "Job": "Chef",
+        "Name": "Sarah",
+        "Password": "53880133-2462-4181-82ba-40a4feb359fa",
+        "Permissions": "Employee"
+    },
+    {
+        "Name": "Jesus",
+        "Password": "dbbc2b4f-ea9c-46f4-9c47-6fe687e3d2f9",
+        "Permissions": "Manager"
+    }
+]
