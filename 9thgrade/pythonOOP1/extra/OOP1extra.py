@@ -1,5 +1,4 @@
-from cryptography.fernet import Fernet
-import os.path
+import base64
 import uuid
 import time
 import json
@@ -35,22 +34,7 @@ class Manager(User):
     def __str__(self):
         return f'Name: {self.name} ID: {self.id} Permissions: {self.permissions}'
 
-def write_key():
-    global key
-    key = Fernet.generate_key
-    with open ('9thgrade/pythonOOP1/extra/key.key', 'w') as keyFile:
-        keyFile.write(str(key))
 
-def load_key():
-    return open("9thgrade/pythonOOP1/extra/key.key", "rb").read()
-
-if os.path.exists('key.key') == True:
-    global key
-    key = load_key()
-else: 
-    write_key()
-
-f = Fernet(key)
 userData = []
 continueSigningIn = True
 while continueSigningIn == True:
@@ -96,11 +80,10 @@ while continueSigningIn == True:
                 print('Shutting down...')
                 with open('9thgrade/pythonOOP1/extra/data.json', 'w') as data:
                     data.write(json.dumps(userData, sort_keys = True, indent = 4))
-                    data.close()
                 with open('9thgrade/pythonOOP1/extra/encrypted.txt', 'w') as encrypted:
-                    userDataStr = str(userData)
-                    encrypted.write(str(f.encrypt(userDataStr.encode())))
-                    encrypted.close()
+                    strData = str(userData)
+                    encryptedData = base64.b64encode(strData.encode('utf-8'))
+                    encrypted.write(str(encryptedData))
                 time.sleep(2)
     else:
         print('Please make sure you entered the correct user type.')
