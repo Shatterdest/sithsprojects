@@ -1,17 +1,16 @@
 [
+    "[{'Name': 'Bob'",
+    " 'Password': '24be8f3f-098a-40a0-b9d6-968897702ec6'}",
+    " {'Name': 'Saarh'",
+    " 'Password': 'de284d9c-0b46-443f-8e9f-ae57fba303ff'",
+    " 'Job': 'Chef'",
+    " 'Permissions': 'Employee'}",
+    " {'Name': 'jesus'",
+    " 'Password': 'd79a975d-2dcb-43c1-a3cf-c45b2ec7eddb'",
+    " 'Permissions': 'Manager'}]",
     {
-        "Name": "bob",
-        "Password": "39f63874-214f-48e4-9320-b51e4f4eab95"
-    },
-    {
-        "Job": "chef",
-        "Name": "sarah",
-        "Password": "402a8cc8-24ef-4795-a5a4-d2c547a6b4f6",
-        "Permissions": "Employee"
-    },
-    {
-        "Name": "go",
-        "Password": "1b74408f-1ddc-4684-b6dd-3522452ed802",
+        "Name": "jesus",
+        "Password": "f0ddb8fe-3086-411a-a740-73032a2b99c7",
         "Permissions": "Manager"
     }
 ]

@@ -1,5 +1,4 @@
 from cryptography.fernet import Fernet
-import os.path
 import base64
 
 balls = 'what is up'
