@@ -1,3 +1,4 @@
+import ast
 import base64
 import uuid
 import time
@@ -45,7 +46,7 @@ try:
         partiallyDecrypted = base64.b64decode(byteData.decode('utf-8'))
         decryptedData = partiallyDecrypted.decode('utf-8')
         print(decryptedData)
-        userData = userData + json.loads(decryptedData)
+        userData = userData + ast.literal_eval(decryptedData)
 except FileNotFoundError: 
     pass
 
