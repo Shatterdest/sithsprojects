@@ -1,16 +1,29 @@
 [
-    "[{'Name': 'Bob'",
-    " 'Password': '24be8f3f-098a-40a0-b9d6-968897702ec6'}",
-    " {'Name': 'Saarh'",
-    " 'Password': 'de284d9c-0b46-443f-8e9f-ae57fba303ff'",
-    " 'Job': 'Chef'",
-    " 'Permissions': 'Employee'}",
+    "[\"[{'Name': 'Bob'\"",
+    " \" 'Password': '24be8f3f-098a-40a0-b9d6-968897702ec6'}\"",
+    " \" {'Name': 'Saarh'\"",
+    " \" 'Password': 'de284d9c-0b46-443f-8e9f-ae57fba303ff'\"",
+    " \" 'Job': 'Chef'\"",
+    " \" 'Permissions': 'Employee'}\"",
+    " \" {'Name': 'jesus'\"",
+    " \" 'Password': 'd79a975d-2dcb-43c1-a3cf-c45b2ec7eddb'\"",
+    " \" 'Permissions': 'Manager'}]\"",
     " {'Name': 'jesus'",
-    " 'Password': 'd79a975d-2dcb-43c1-a3cf-c45b2ec7eddb'",
+    " 'Password': 'f0ddb8fe-3086-411a-a740-73032a2b99c7'",
     " 'Permissions': 'Manager'}]",
     {
+        "Name": "bob",
+        "Password": "210fa6be-bee3-4a91-8324-9b7d7e56087b"
+    },
+    {
+        "Job": "chef",
+        "Name": "srarah",
+        "Password": "13a3f6f5-ddaf-40a8-b4d1-170d0c281031",
+        "Permissions": "Employee"
+    },
+    {
         "Name": "jesus",
-        "Password": "f0ddb8fe-3086-411a-a740-73032a2b99c7",
+        "Password": "3d6f7c70-281f-43fd-a88c-94686089b5d7",
         "Permissions": "Manager"
     }
 ]

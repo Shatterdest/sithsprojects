@@ -36,10 +36,6 @@ class Manager(User):
 
 
 userData = []
-def convertToList(str):
-    li = list(str.split(",")) # fix this you fool
-    return li
-
 
 try:
     with open ('9thgrade/pythonOOP1/extra/encrypted.txt', 'r') as file:
@@ -49,7 +45,7 @@ try:
         partiallyDecrypted = base64.b64decode(byteData.decode('utf-8'))
         decryptedData = partiallyDecrypted.decode('utf-8')
         print(decryptedData)
-        userData.extend(convertToList(decryptedData))
+        userData = userData + json.loads(decryptedData)
 except FileNotFoundError: 
     pass
 
@@ -108,6 +104,6 @@ while continueSigningIn == True:
         else:
             print('Please make sure you entered the correct user type.')
             time.sleep(1.5)
-    elif logOption.upper == 'L':
+    '''elif logOption.upper == 'L':
         print(usernames)
-        userNameInput = input('What user are you logging in as? ')
+        userNameInput = input('What user are you logging in as? ')'''
