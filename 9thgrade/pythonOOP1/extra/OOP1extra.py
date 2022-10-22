@@ -37,6 +37,28 @@ class Manager(User):
 
 
 userData = []
+usernames = []
+def sortUserNames():
+    for name in range(len(userData)):
+        usernames.append(userData[name]['Name'])
+        print(usernames)
+
+def managerPowers():
+    outputUsers = input(f'Manager, do you want to see the users in the list? (y/n) ')
+    if outputUsers.lower() == 'y':
+        print(userData)
+        endLoop = input(f'Manager, do you want to shut down and save the list in this sign in system? (y/n) ')
+        if endLoop.lower() == 'y':
+            global continueSigningIn
+            continueSigningIn = False
+            print('Shutting down...')
+            with open('9thgrade/pythonOOP1/extra/data.json', 'w') as data:
+                data.write(json.dumps(userData, sort_keys = True, indent = 4))
+            with open('9thgrade/pythonOOP1/extra/encrypted.txt', 'w') as encrypted:
+                strData = str(userData)
+                encryptedData = base64.b64encode(strData.encode('utf-8'))
+                encrypted.write(str(encryptedData.decode('utf-8')))
+            time.sleep(2)
 
 try:
     with open ('9thgrade/pythonOOP1/extra/encrypted.txt', 'r') as file:
@@ -50,8 +72,6 @@ try:
 except FileNotFoundError: 
     pass
 
-
-continueSigningIn = True
 while continueSigningIn == True:
     logOption = input('Are you logging in or creating a user? (L, C)')
     if logOption.upper() == 'C':
@@ -88,23 +108,17 @@ while continueSigningIn == True:
                 'Permissions' : 'Manager'
             }
             userData.append(newManagerDic)
-            outputUsers = input(f'Manager, do you want to see the users in the list? (y/n) ')
-            if outputUsers.lower() == 'y':
-                print(userData)
-                endLoop = input(f'Manager, do you want to shut down and save the list in this sign in system? (y/n) ')
-                if endLoop.lower() == 'y':
-                    continueSigningIn = False
-                    print('Shutting down...')
-                    with open('9thgrade/pythonOOP1/extra/data.json', 'w') as data:
-                        data.write(json.dumps(userData, sort_keys = True, indent = 4))
-                    with open('9thgrade/pythonOOP1/extra/encrypted.txt', 'w') as encrypted:
-                        strData = str(userData)
-                        encryptedData = base64.b64encode(strData.encode('utf-8'))
-                        encrypted.write(str(encryptedData.decode('utf-8')))
-                    time.sleep(2)
         else:
             print('Please make sure you entered the correct user type.')
             time.sleep(1.5)
-    '''elif logOption.upper == 'L':
+    else:
+        sortUserNames()
         print(usernames)
-        userNameInput = input('What user are you logging in as? ')'''
+        userNameInput = input('What user are you logging in as? ')
+        for name in usernames:
+            password = userData[name]['Password']
+            if name == userNameInput:
+                passInput = input(f'What is you password, {name}?')
+                if passInput == password:
+                    
+                    pass
