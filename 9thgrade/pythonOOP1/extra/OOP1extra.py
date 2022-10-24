@@ -1,6 +1,6 @@
 import ast
 import base64
-import uuid
+import sys
 import time
 import json
 
@@ -37,11 +37,8 @@ class Manager(User):
 
 
 userData = []
-usernames = []
-def sortUserNames():
-    for name in range(len(userData)):
-        usernames.append(userData[name]['Name'])
-        print(usernames)
+continueSigningIn = True
+
 
 def managerPowers():
     outputUsers = input(f'Manager, do you want to see the users in the list? (y/n) ')
@@ -73,24 +70,27 @@ except FileNotFoundError:
     pass
 
 while continueSigningIn == True:
-    logOption = input('Are you logging in or creating a user? (L, C)')
-    if logOption.upper() == 'C':
+    logOption = input('Are you logging in or creating a user? (Login, Create)')
+    if logOption.upper() in ('C', "CREATE"):
         print("Welcome to the check-in system for this business.")
         userType = input('What type of user are you? (Customer, Employee, or Manager) ')
         if userType.lower() == 'customer':
             nameInput = input('What is your name? ')
-            newCustomer = Customer(str(uuid.uuid4()), nameInput)
-            print(f'Your name is {newCustomer.name}, and your unique Password is {newCustomer.id}. Thanks for signing in! ')
+            passInput = input('Create a password: ')
+            newCustomer = Customer(passInput, nameInput)
+            print(f'Your name is {newCustomer.name}, and your unique Password is {newCustomer.id}. Thanks for signing in and remember to save your password! ')
             newCustomerDic = {
                 'Name' : newCustomer.name,
-                'Password' : newCustomer.id
+                'Password' : newCustomer.id,
+                'Permissions' : 'Customer'
             }
             userData.append(newCustomerDic)
         elif userType.lower() == 'employee':
             nameInput = input('What is your name? ')
             jobInput = input('What is your occupation? ')
-            newEmployee = Employee(str(uuid.uuid4()), nameInput, jobInput)
-            print(f'Your name is {newEmployee.name}, and your unique Password is {newEmployee.id}. Your job is {newEmployee.job}. Thanks for signing in! ')
+            passInput = input('Create a password: ')
+            newEmployee = Employee(passInput, nameInput, jobInput)
+            print(f'Your name is {newEmployee.name}, and your unique Password is {newEmployee.id}. Your job is {newEmployee.job}. Thanks for signing in and remember to save your password! ')
             newEmployeeDic = {
                 'Name' : newEmployee.name,
                 'Password' : newEmployee.id,
@@ -100,25 +100,38 @@ while continueSigningIn == True:
             userData.append(newEmployeeDic)
         elif userType.lower() == 'manager':
             nameInput = input('What is your name? ')
-            newManager = Manager(str(uuid.uuid4()), nameInput)
-            print(f'Your name is {newManager.name}, and your unique Password is {newManager.id}. Thanks for signing in! ')
+            passInput = input('Create a password: ')
+            newManager = Manager(passInput, nameInput)
+            print(f'Your name is {newManager.name}, and your unique Password is {newManager.id}. Thanks for signing in and remember to save your password! ')
             newManagerDic = {
                 'Name' : newManager.name,
                 'Password' : newManager.id,
                 'Permissions' : 'Manager'
             }
             userData.append(newManagerDic)
+            managerPowers()
         else:
             print('Please make sure you entered the correct user type.')
             time.sleep(1.5)
+    elif logOption.upper() in ('L', 'LOGIN'):
+        try:
+            userNameInput = input('What user are you logging in as? ')
+            for user in range(len(userData)):
+                perms = userData[user]['Permissions']
+                username = userData[user]['Name']
+                password = userData[user]['Password']
+                if username.lower() == userNameInput.lower():
+                    passInput = input(f'What is you password, {username}?')
+                    if passInput == password:
+                        print(f'Thank you for signing in, {username}.')
+                        if perms.lower() == 'manager':
+                            managerPowers()
+                    else: 
+                        print('Your password is incorrect. Sorry!')
+        except: 
+            e = sys.exc_info()[1]
+            print('Something went wrong, please try again!' + e.args[0])
+            time.sleep(0.5)
     else:
-        sortUserNames()
-        print(usernames)
-        userNameInput = input('What user are you logging in as? ')
-        for name in usernames:
-            password = userData[name]['Password']
-            if name == userNameInput:
-                passInput = input(f'What is you password, {name}?')
-                if passInput == password:
-                    
-                    pass
+        print('Something went wrong, try again!')
+        time.sleep(0.5)

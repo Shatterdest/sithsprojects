@@ -1,22 +1,12 @@
 [
     {
-        "Name": "bob",
-        "Password": "f52121c1-08ae-4079-aa32-3c0f76db0275"
+        "Name": "sarah",
+        "Password": "sarah",
+        "Permissions": "Customer"
     },
     {
-        "Job": "sarah",
-        "Name": "employee",
-        "Password": "55feb25f-2580-4b0d-a592-a8341ebb8ccb",
-        "Permissions": "Employee"
-    },
-    {
-        "Name": "god",
-        "Password": "ebda75c7-0b4b-4a2c-bf85-d5d1b9c80681",
-        "Permissions": "Manager"
-    },
-    {
-        "Name": "ejsususu",
-        "Password": "af1ee045-6c91-4a8a-a0ec-66053d6d8d92",
+        "Name": "jesus",
+        "Password": "god",
         "Permissions": "Manager"
     }
 ]
