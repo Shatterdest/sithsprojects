@@ -49,16 +49,16 @@ def managerPowers():
             global continueSigningIn
             continueSigningIn = False
             print('Shutting down...')
-            with open('9thgrade/pythonOOP1/extra/data.json', 'w') as data:
+            with open('9thgradewhalen/pythonOOP1/extra/data.json', 'w') as data:
                 data.write(json.dumps(userData, sort_keys = True, indent = 4))
-            with open('9thgrade/pythonOOP1/extra/encrypted.txt', 'w') as encrypted:
+            with open('9thgradewhalen/pythonOOP1/extra/encrypted.txt', 'w') as encrypted:
                 strData = str(userData)
                 encryptedData = base64.b64encode(strData.encode('utf-8'))
                 encrypted.write(str(encryptedData.decode('utf-8')))
             time.sleep(2)
 
 try:
-    with open ('9thgrade/pythonOOP1/extra/encrypted.txt', 'r') as file:
+    with open ('9thgradewhalen/pythonOOP1/extra/encrypted.txt', 'r') as file:
         data = file.read()
         byteData = data.encode('utf-8')
         global decryptedData

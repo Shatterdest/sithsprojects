@@ -2,7 +2,7 @@ import sys
 import json
 import time
 ## Open the JSON file of pokemon data
-pokedex = open("./pokedex.json", encoding="utf8")
+pokedex = open("9thgradewhalen/pokedex/pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 pokedexData = json.load(pokedex)
 
@@ -29,10 +29,6 @@ Ground, Rock, Psychic, Ice, Bug, Ghost, Steel, Dragon, Dark, and Fairy.''')
                 count = count + 1
         if sortedPokemon == False:
             print('We could not find a Pokemon of the type you mentioned. Sorry!')
-
-            
-
-
 
     sortpokemon(userinput)
 

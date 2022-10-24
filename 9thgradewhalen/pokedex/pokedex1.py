@@ -1,7 +1,7 @@
 import json
 import time
 ## Open the JSON file of pokemon data
-pokedex = open("./pokedex.json", encoding="utf8")
+pokedex = open("9thgradewhalen/pokedex/pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 pokedexData = json.load(pokedex)
 
