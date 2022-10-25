@@ -75,6 +75,7 @@ def gameLoop():
         pygame.display.update()
         pygame.draw.rect(dis, blue, [foodx, foody, snake_block, snake_block])
         pygame.draw.rect(dis, green, [x1, y1, snake_block, snake_block])
+        pygame.display.update()
         clock.tick(snake_speed)
 
 
