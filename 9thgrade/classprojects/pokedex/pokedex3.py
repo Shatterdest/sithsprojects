@@ -2,7 +2,7 @@ import json
 import sys
 import time
 ## Open the JSON file of pokemon data
-pokedex = open("9thgrade/classprojects/pokedex/pokedex.json", encoding="utf8")
+pokedex = open("./pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 pokedexData = json.load(pokedex)
 
@@ -12,8 +12,7 @@ try:
 
     def findPokemon(pokemonName):
         for entry in range(len(pokedexData)):
-            pokemonNames = pokedexData[entry]["name"][language.lower()]
-            if pokemonName.lower() == pokemonNames.lower():
+            if pokemonName.capitalize() in pokedexData[entry]["name"][language.lower()]:
                 print(f'The Pokemon Name you entered was: {pokemonName}.')
                 time.sleep(1)
                 print(f'''The Pokemon's names in other languages are:
@@ -23,7 +22,7 @@ try:
     French Name: {pokedexData[entry]["name"]["french"]}''')
                 time.sleep(2.5)
                 print(f'''The Pokemon's type(s) are: 
-    {pokedexData[entry]["type"]}''')
+    {', '.join(pokedexData[entry]["type"])}''')
                 print(f'''The Pokemon's stats are: 
     {pokedexData[entry]["base"]["HP"]} HP,
     {pokedexData[entry]["base"]["Attack"]} Attack,
