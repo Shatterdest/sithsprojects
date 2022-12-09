@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block title %}{{ interest["Name"] }}{% endblock %}
+
+{% block contents %}
+<h1 class="title">{{ interest["Name"] }}</h1>
+<hr class="rounded" />
+
+<h2>{{ interest["Description"] }} </h2>
+<a href="{{ interest['Link'] }}" target="_blank" class="embed-link">Link to webpage below!
+</a>
+<embed class="embed" src="{{ interest['Link'] }}">
+{% endblock %}

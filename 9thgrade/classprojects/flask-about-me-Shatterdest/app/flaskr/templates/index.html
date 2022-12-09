@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %}About Me{% endblock %} {% block
+contents %}
+
+
+
+
+<h1 class="title" id="about">{{ me[4] }}</h1>
+<hr class="rounded homerounded" />
+
+<div>
+  <h2 class="Info">
+    My name is {{ me[0] }}, and I am {{ me[1] }} years old. Right now, I go to
+    the school {{ me[2] }}.
+  </h2>
+  <h3 class="Info">Here are my interests:</h3>
+  <div class="flex-container">
+    {% for interest in me[3] %}
+    <div class="card">
+      <h3 class="card-title">{{ interest["Name"] }}</h3>
+      <h4 class="card-desc">{{ interest["Description"] }}</h4>
+      <div class="button-container">
+        {% for item in interest["List"] %}
+        {% set i = loop.index - 1 %}
+        <a class="card-text" href="/interest/{{ interest['List'][i]['Name'] }}">{{ item["Name"] }}</a>
+        {% endfor %}
+      </div>
+      <img src="{{ interest['Image'] }}" alt="" class="card-img">
+    </div>
+    {% endfor %}
+  </div>
+  <div class="separator">
+    <a href="/#meme" class="meme-text">↓ Click me for meme!!! ↓</a>
+  </div>
+  <img id="meme" class="meme" src="../static/assets/meme.jpg" alt="meme">
+  {% endblock %}
