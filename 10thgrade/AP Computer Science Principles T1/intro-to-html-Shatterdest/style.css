@@ -1,0 +1,109 @@
+body {
+    background-color: rgb(71, 71, 71);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: white;
+    font-size: 41px;
+}
+
+
+.header {
+    text-align: center;
+    text-decoration: bold;
+    font-size: 60px;
+    margin-bottom: 0px;
+}
+
+.subheader {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.paragraph {
+    text-align: left;
+}
+
+.li .list {
+    list-style: none;
+}
+
+.meme {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 95vw;
+    margin: 50px auto;
+    list-style: none;
+}
+
+.card {
+    width: 41%;
+    color: white;
+    background-color: rgba(21, 16, 25, 0.30);
+    text-align: center;
+    transition: 0.3s all;
+    border: 2px rgba(255, 255, 255, 0.77) solid;
+    border-radius: 14px;
+    margin-right: 14px;
+    padding-left: 20px;
+    padding-right: 75px;
+}
+
+.links:hover {
+    color: black;
+    transition: 0.5s all;
+}
+
+.card:hover {
+    color: black;
+    background-color: white;
+    transition: 0.5s all;
+    transform: translate3D(0, -5px, 0) scale(1.05);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+hr.homerounded {
+    opacity: 100%;
+    border-top: 8px solid white;
+    border-radius: 5px;
+}
+
+.rounded {
+    border-top: 8px solid white;
+    border-radius: 6px;
+}
+
+.h3 {
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+li {
+    font-size: 20px;
+}
