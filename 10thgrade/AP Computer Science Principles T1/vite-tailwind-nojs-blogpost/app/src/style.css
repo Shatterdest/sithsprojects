@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  width: 100%
+}
+
+a {
+  @apply font-medium text-[#191c53];
+}
+
+a:hover {
+  @apply text-[#191c53];
+}
+
+#title {
+  text-align: center;
+}
+
+.blog {
+  width: 85vw;
+  margin: 41px auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  background-color: #1a00ff24;
+}
+
+.card__title {
+  font-size: 41px;
+  text-align: center;
+}
+
+.image {
+  width: 60%;
+  height: 60%;
+  margin: 25px auto;
+}
+
+.link {
+  margin-bottom: 0;
+  margin: auto;
+}
+
+.button {
+  margin: auto;
+  border-width: 2px;
+  border-radius: 14px;
+  border-color: rgb(0, 0, 0);
+  background-color: #283be17d;
+  display: flex; 
+  width: 17%;
+  padding: 10px 10px;
+  transition: 0.5s all;
+}
+
+.button:hover {
+  background-color: rgb(255 255 255);
+
+}

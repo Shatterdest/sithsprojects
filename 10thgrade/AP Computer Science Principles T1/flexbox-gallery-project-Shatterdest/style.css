@@ -1,0 +1,159 @@
+body,
+html,
+* {
+    font-size: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Neue', cursive;
+    background-color: #a0cfff;
+    color: black;
+}
+
+.title {
+    font-size: 10rem;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.container {
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem auto;
+}
+
+.card {
+    position: relative;
+    width: 22%;
+    background-color: rgba(0, 0, 0, 0.08);
+    justify-content: space-around;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2rem auto;
+    flex-basis: auto;
+    border: rgba(0, 0, 0) solid 3px;
+    border-radius: 20px;
+    transition: 0.2s all;
+    z-index: 100;
+}
+
+@media screen and (max-width: 1300px) {
+    .card {
+        width: 27%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .card {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        width: 90%;
+    }
+}
+
+
+
+.card:hover {
+    box-shadow: 0px 5px 5px 5px rgba(0, 77, 218, 0.6);
+    transform: translate3D(0, -1px, 0) scale(1.03);
+}
+
+.card-image {
+    width: 80%;
+}
+
+.card-title {
+    background-color: rgba(29, 124, 5, 0);
+    font-size: 4.5rem;
+    margin-top: 1rem;
+}
+
+.card-description {
+    background-color: rgba(29, 124, 5, 0);
+
+    font-size: 2rem;
+    margin: 1rem 1rem;
+}
+
+#spin:hover {
+    transform: rotate(720deg);
+    transition: 5s all;
+}
+
+#spin:hover .card-title {
+    transform: rotate(-720deg);
+    transition: 5s all;
+}
+
+#spin:hover .card-description {
+    transform: rotate(-720deg);
+    transition: 5s all;
+}
+
+
+#fade:hover {
+    animation: fadeOut 2s;
+}
+
+#fade:hover :not(.card-image){
+    opacity: 100;
+    animation: none;
+}
+
+#wide:hover {
+    transform: scale(2, 0.5);
+    transition: 10s all;
+}
+
+#wide:hover .card-image {
+    transform: scale(0.1, 5);
+    transition: 10s all;
+}
+
+#wheel:hover {
+    animation: wheeley 5s ease-in forwards
+}
+
+#wheel:hover #wheel-image {
+    transition: 17s all;
+    transform: rotate(1000deg);
+}
+
+
+@keyframes wheeley {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translateX(200%);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 100;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+}

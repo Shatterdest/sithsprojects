@@ -1,0 +1,35 @@
+{
+  "name": "vite-tailwind-starter",
+  "description": "NoJS Vite + Tailwind CSS Starter",
+  "version": "0.0.0",
+  "keywords": [
+    "template",
+    "scaffold",
+    "tailwind",
+    "tailwindcss",
+    "tailwind-css",
+    "vite",
+    "vitejs",
+    "vite-template",
+    "vitejs-template",
+    "vite-tailwind"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write './src/**/*.{html,js,jsx,ts,tsx}'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "cssnano": "^6.0.1"
+  }
+}
