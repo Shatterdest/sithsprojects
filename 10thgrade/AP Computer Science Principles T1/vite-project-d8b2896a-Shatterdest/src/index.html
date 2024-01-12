@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <title>touch grass</title>
+</head>
+
+<body class="dark">
+  <header>
+    <h1 class='main'>
+      Agent Card Store
+    </h1>
+  </header>
+  <div class="secondary">
+    <form id="form" action="">
+      <h2 class="form-label">Pick Agent Type: </h2>
+      <input type="checkbox" name="duelist" value="Duelist" id="duelist">
+      <label for="duelist">Duelist</label>
+      <input type="checkbox" name="initiator" value="Initiator" id="initiator">
+      <label for="initiator">Initiator</label>
+      <input type="checkbox" name="controller" value="Controller" id="controller">
+      <label for="controller">Controller</label>
+      <input type="checkbox" name="sentinel" value="Sentinel" id="sentinel">
+      <label for="sentinel">Sentinel</label>
+      <input type="submit" value="Submit" id="submit">
+    </form>
+    <div class="checkbox-wrapper-8">
+      <h3 id="tglg">Toggle Golden: </h3>
+      <input aria-labelledby="tglg" type="checkbox" id="cb3-8" class="tgl tgl-skewed">
+      <label for='cb3-8' data-tg-on="ON" data-tg-off="OFF" class="tgl-btn">⠀</label>
+    </div>
+    <div id="container">
+
+    </div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

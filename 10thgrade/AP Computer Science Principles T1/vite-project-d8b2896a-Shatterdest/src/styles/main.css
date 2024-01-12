@@ -1,0 +1,165 @@
+@import url("variables.css");
+@import url('btn.css');
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text);
+  background-color: var(--secondary);
+}
+
+.dark {
+  --primary: var(--black);
+  --secondary: var(--dark-gray);
+  --tertiary: var(--black);
+  --text: var(--white);
+}
+
+.gold {
+  --primary: var(--dark-gold);
+  --secondary: var(--gold);
+  --tertiary: var(--white);
+  --text: var(--black);
+}
+
+a {
+  font-weight: 500;
+  color: var(--link);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--link);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 5rem;
+  line-height: 1.1;
+  display: block;
+  text-align: center;
+  background-color: var(--primary);
+}
+
+#container {
+  width: 95vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1rem auto;
+}
+
+.card {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem auto;
+  flex-basis: auto;
+  border: var(--tertiary) solid 3px;
+  border-radius: 20px;
+  margin-right: 2rem;
+  overflow: hidden;
+}
+
+.gold .card {
+  box-shadow: var(--white) 0px 16px 48px 0px
+}
+
+button,
+#submit {
+  background-color: var(--white);
+  border: var(--white) solid 3px;
+  border-radius: 5px;
+}
+
+#form {
+  font-size: 1.4rem;
+  margin-left: 1rem;
+}
+
+#toggle {
+  margin-left: 1rem;
+}
+
+#submit {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.display-name {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.agent-type {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.cost {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.img {
+  width: 50%;
+}
+
+.class-img {
+  width: 15%;
+  margin-top: 1.5rem;
+}
+
+#tglg {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  font-weight: 500;
+  margin-right: .5rem;
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1301px) {
+  .card {
+    width: 22%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .card {
+    width: 27%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: 90%;
+  }
+}

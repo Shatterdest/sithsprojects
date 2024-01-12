@@ -1,0 +1,161 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html,
+* {
+  font-size: 10px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  body,
+  html,
+  * {
+    font-size: 7.5px;
+  }
+}
+@media screen and (max-width: 750px) {
+  body,
+  html,
+  * {
+    font-size: 5px;
+  }
+}
+label,
+input {
+  font-size: 5rem;
+}
+
+details>summary {
+  list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.534);
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+input {
+  width: 85vw;
+  text-align: center;
+}
+
+.region-name {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.region {
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.country {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.type {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.headline {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.location {
+  border: white solid 3px;
+  border-radius: 20px;
+  padding: 5px 5px;
+}
+
+#location-container {
+  margin-left: 5%;
+  margin-right: 5%
+}
+
+.forecast-container {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1rem auto;
+}
+
+.forecast {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem auto;
+  flex-basis: auto;
+  margin-right: 2rem;
+  overflow: hidden;
+}
+
+.time {
+  font-size: 2rem;
+}
+
+.forecast-text {
+  font-size: 2rem;
+}
+
+.temp {
+  font-size: 2.5rem;
+}
+
+.see-more {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.method {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#current-loc {
+  font-size: 2rem;
+}
+
+#error {
+  text-align: center;
+  color: rgb(255, 30, 0);
+  font-size: 2rem;
+}
